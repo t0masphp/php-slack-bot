@@ -202,6 +202,9 @@ class Bot
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url.'?'.http_build_query($this->params));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            `Authorization: Bearer ${this->params['token']}`,
+        ));
         $body = curl_exec($ch);
         if ($body === false) {
             throw new \Exception('Error when requesting '.$url.' '.curl_error($ch));
