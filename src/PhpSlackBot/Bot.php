@@ -200,7 +200,7 @@ class Bot
     {
         $url = 'https://slack.com/api/rtm.start';
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url.'?'.http_build_query($this->params));
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             `Authorization: Bearer ${this->params['token']}`,
