@@ -203,7 +203,7 @@ class Bot
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            `Authorization: Bearer ${this->params['token']}`,
+            "Authorization: Bearer {$this->params['token']}",
         ));
         $body = curl_exec($ch);
         if ($body === false) {
